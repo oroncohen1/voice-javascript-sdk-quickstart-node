@@ -239,6 +239,7 @@
     if (device) {
       updateDevices(speakerDevices, device.audio.speakerDevices.get());
       updateDevices(ringtoneDevices, device.audio.ringtoneDevices.get());
+      updateDevices(null, device.audio.mic)
     }
   }
 
@@ -247,7 +248,7 @@
       .filter((node) => node.selected)
       .map((node) => node.getAttribute("data-id"));
 
-    device.audio.speakerDevices.set(selectedDevices);
+    device.audio.speakerDevices.set(selectedDevices);FR
   }
 
   function updateRingtoneDevice() {
